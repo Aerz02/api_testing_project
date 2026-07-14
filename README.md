@@ -209,13 +209,13 @@ We are a group of 7 automation and quality assurance experts working together in
 <br>
 
 <p align="center">
-  <a href="https://github.com/oanzia99">
-    <img src="https://img.shields.io/badge/OAN%20ZIA-Project%20Lead%20%2F%20Architect-blue?style=for-the-badge&logo=github&logoColor=white" alt="Oan Zia" />
-  </a>
+  <img src="https://img.shields.io/badge/MATTHEW%20CORTHORNE-Project%20Lead%20%2F%20Architect-blue?style=for-the-badge" alt="Matthew Corthorne" />
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Matthew%20Corthorne-CI%2FCD%20%26%20DevOps%20Lead-green?style=flat-square" />
+  <a href="https://github.com/oanzia99">
+    <img src="https://img.shields.io/badge/Oan%20Zia-CI%2FCD%20%26%20DevOps%20Lead-green?style=flat-square&logo=github&logoColor=white" alt="Oan Zia" />
+  </a>
   <img src="https://img.shields.io/badge/Piravien-Test%20Case%20Designer-green?style=flat-square" />
   <img src="https://img.shields.io/badge/Zeenia%20Haji-Senior%20QA%20Engineer-green?style=flat-square" />
 </p>
