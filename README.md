@@ -54,7 +54,7 @@ api_testing_project
            │    ├── ProductResponse.java
            │    └── UserType.java
            ├── service
-           │    └── ProductService.java # Business logic service utilizing ApiClient
+           │    └── ProductService.java # Business logic service utilising ApiClient
            ├── unit                   # Mockito unit tests for service class
            │    └── ProductServiceUnitTest.java
            └── integration            # RestAssured integration tests
