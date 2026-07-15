@@ -1,5 +1,6 @@
 package com.sparta.endpointtesting;
 
+import com.sparta.endpointtesting.utils.ApiConfig;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.hamcrest.MatcherAssert;
@@ -15,9 +16,9 @@ public class ServerUpTest {
     static void beforeAll(){
         response = RestAssured
                 .given()
-                .baseUri("https://automationexercise.com")
+                .baseUri(ApiConfig.getBaseUri())
                 .when()
-                .get("api/productsList")
+                .get(ApiConfig.getProductsList())
                 .then()
                 .log().all()
                 .extract().response();
