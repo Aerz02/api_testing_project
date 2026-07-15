@@ -1,12 +1,13 @@
 package com.sparta.api_testing_project.client;
 
+import com.sparta.endpointtesting.utils.ApiConfig;
 import io.restassured.RestAssured;
 import io.restassured.parsing.Parser;
 import io.restassured.response.Response;
 
 public class ApiClient {
 
-    private static final String BASE_URL = "https://automationexercise.com/api";
+    private static final String BASE_URL = ApiConfig.getBaseUri();
 
     static {
         RestAssured.registerParser("text/html", Parser.JSON);
@@ -17,7 +18,7 @@ public class ApiClient {
                 .given()
                 .baseUri(BASE_URL)
                 .when()
-                .get("/productsList");
+                .get(ApiConfig.getProductsList());
     }
 
     public Response postAllProducts() {
@@ -25,7 +26,7 @@ public class ApiClient {
                 .given()
                 .baseUri(BASE_URL)
                 .when()
-                .post("/productsList");
+                .post(ApiConfig.getProductsList());
     }
 
     public Response getAllBrands() {
@@ -33,7 +34,7 @@ public class ApiClient {
                 .given()
                 .baseUri(BASE_URL)
                 .when()
-                .get("/brandsList");
+                .get(ApiConfig.getBrandsList());
     }
 
     public Response putAllBrands() {
@@ -41,7 +42,7 @@ public class ApiClient {
                 .given()
                 .baseUri(BASE_URL)
                 .when()
-                .put("/brandsList");
+                .put(ApiConfig.getBrandsList());
     }
 
     public Response searchProduct(String query) {
@@ -50,7 +51,7 @@ public class ApiClient {
                 .baseUri(BASE_URL)
                 .formParam("search_product", query)
                 .when()
-                .post("/searchProduct");
+                .post(ApiConfig.getSearchProducts());
     }
 
     public Response searchProductMissingParam() {
@@ -58,6 +59,6 @@ public class ApiClient {
                 .given()
                 .baseUri(BASE_URL)
                 .when()
-                .post("/searchProduct");
+                .post(ApiConfig.getSearchProducts());
     }
 }
