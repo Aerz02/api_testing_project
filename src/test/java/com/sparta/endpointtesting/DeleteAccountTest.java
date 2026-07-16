@@ -35,7 +35,7 @@ public class DeleteAccountTest {
         RestAssured.registerParser("text/html", Parser.JSON);
 
         existingEmail = "sdet_test_" + System.currentTimeMillis() + "@example.com";
-        createTestAccount(existingEmail, PASSWORD);
+        createTestAccount(existingEmail);
         verifyAccountExists(existingEmail);
 
         // Happy Path - delete an account that exists
@@ -125,10 +125,10 @@ public class DeleteAccountTest {
      * replace this method's usage with Helper.createAccountRequest(...) and delete
      * this method.
      */
-    private static void createTestAccount(String email, String password) {
+    private static void createTestAccount(String email) {
         Response response = RestAssured
                 .given()
-                .spec(Helper.createAccountRequest("Delete Test User", email, password))
+                .spec(Helper.createAccountRequest("Delete Test User", email, DeleteAccountTest.PASSWORD))
                 .when()
                 .post()
                 .then()
