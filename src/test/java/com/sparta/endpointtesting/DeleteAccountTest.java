@@ -1,7 +1,6 @@
 package com.sparta.endpointtesting;
 
 import com.sparta.endpointtesting.pojoconfig.pojos.AccountResponse;
-import com.sparta.endpointtesting.utils.ApiConfig;
 import com.sparta.endpointtesting.utils.Helper;
 import io.restassured.RestAssured;
 import io.restassured.parsing.Parser;
@@ -11,8 +10,6 @@ import org.hamcrest.Matchers;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import java.util.Map;
 
 /**
  * User story: Delete an existing user account
