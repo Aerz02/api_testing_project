@@ -54,6 +54,7 @@ public class Helper {
                         "password", password
                 )).build();
     }
+
 // Don't know parameters for these will update later
     public static RequestSpecification deleteAccountRequest(String email, String password) {
         return getBaseSpecBuilder(DELETE_ACCOUNT_PATH)
@@ -122,4 +123,47 @@ public class Helper {
 
     }
 
+    public static RequestSpecification createAccountRequest(String name, String email, String password) {
+        return getBaseSpecBuilder(CREATE_ACCOUNT_PATH)
+                .addFormParam("name", name)
+                .addFormParam("email", email)
+                .addFormParam("password", password)
+                .addFormParam("title", "Mr")
+                .addFormParam("birth_date", "10")
+                .addFormParam("birth_month", "5")
+                .addFormParam("birth_year", "1995")
+                .addFormParam("firstname", "Test")
+                .addFormParam("lastname", "User")
+                .addFormParam("company", "Sparta")
+                .addFormParam("address1", "1 Test Street")
+                .addFormParam("address2", "London")
+                .addFormParam("country", "United Kingdom")
+                .addFormParam("zipcode", "SW1A 1AA")
+                .addFormParam("state", "London")
+                .addFormParam("city", "London")
+                .addFormParam("mobile_number", "07123456789")
+                .build();
+    }
+
+    public static RequestSpecification createAccountWithoutEmailRequest(String name, String password) {
+        return getBaseSpecBuilder(CREATE_ACCOUNT_PATH)
+                .addFormParam("name", name)
+                .addFormParam("password", password)
+                .addFormParam("title", "Mr")
+                .addFormParam("birth_date", "10")
+                .addFormParam("birth_month", "5")
+                .addFormParam("birth_year", "1995")
+                .addFormParam("firstname", "Test")
+                .addFormParam("lastname", "User")
+                .addFormParam("company", "Sparta")
+                .addFormParam("address1", "1 Test Street")
+                .addFormParam("address2", "London")
+                .addFormParam("country", "United Kingdom")
+                .addFormParam("zipcode", "SW1A 1AA")
+                .addFormParam("state", "London")
+                .addFormParam("city", "London")
+                .addFormParam("mobile_number", "07123456789")
+                .build();
+    }
 }
+

@@ -38,7 +38,7 @@ public class DeleteAccountTest {
         RestAssured.registerParser("text/html", Parser.JSON);
 
         existingEmail = "sdet_test_" + System.currentTimeMillis() + "@example.com";
-        createFullTestAccount(existingEmail, PASSWORD);
+        createTestAccount(existingEmail, PASSWORD);
         verifyAccountExists(existingEmail);
 
         // Happy Path - delete an account that exists
@@ -128,30 +128,12 @@ public class DeleteAccountTest {
      * replace this method's usage with Helper.createAccountRequest(...) and delete
      * this method.
      */
-    private static void createFullTestAccount(String email, String password) {
-        Response response = RestAssured.given()
-                .baseUri(ApiConfig.getBaseUri())
-                .formParams(Map.ofEntries(
-                        Map.entry("name", "Delete Test User"),
-                        Map.entry("email", email),
-                        Map.entry("password", password),
-                        Map.entry("title", "Mr"),
-                        Map.entry("birth_date", "1"),
-                        Map.entry("birth_month", "1"),
-                        Map.entry("birth_year", "1990"),
-                        Map.entry("firstname", "Delete"),
-                        Map.entry("lastname", "Test"),
-                        Map.entry("company", "SDET Test Co"),
-                        Map.entry("address1", "123 Test St"),
-                        Map.entry("address2", "Flat 1"),
-                        Map.entry("country", "United Kingdom"),
-                        Map.entry("zipcode", "12345"),
-                        Map.entry("state", "London"),
-                        Map.entry("city", "London"),
-                        Map.entry("mobile_number", "1234567890")
-                ))
+    private static void createTestAccount(String email, String password) {
+        Response response = RestAssured
+                .given()
+                .spec(Helper.createAccountRequest("Delete Test User", email, password))
                 .when()
-                .post(ApiConfig.getCreateAccount())
+                .post()
                 .then()
                 .log().all()
                 .extract().response();
