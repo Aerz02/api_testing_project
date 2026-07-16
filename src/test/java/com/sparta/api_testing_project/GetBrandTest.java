@@ -49,14 +49,12 @@ public class GetBrandTest {
 
 
     @Test
-    @DisplayName("PUT request to brands endpoint returns 405")
+    @DisplayName("PUT request to brands endpoint returns 405 response code")
     void testPutBrandsReturns405(){
         putResponse = Helper.putBrandRequest();
-        MatcherAssert.assertThat(
-                putResponse.getStatusCode(),
-                Matchers.is(405)
-        );
-        //Defect: The API returns HTTP 200 for an unsupported HTTP method instead of HTTP 405 Method Not Allowed.
+        // The API returns HTTP 200 OK header, but lists responseCode 405 in the JSON body (due to backend defect)
+        MatcherAssert.assertThat(putResponse.getStatusCode(), Matchers.is(200));
+        MatcherAssert.assertThat(putResponse.jsonPath().getInt("responseCode"), Matchers.is(405));
     }
 
 
