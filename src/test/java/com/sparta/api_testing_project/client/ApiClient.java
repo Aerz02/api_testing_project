@@ -61,4 +61,13 @@ public class ApiClient {
                 .when()
                 .post(ApiConfig.getSearchProducts());
     }
+
+    public Response getUserDetailByEmail(String email) {
+        return RestAssured
+                .given()
+                .baseUri(BASE_URL)
+                .queryParam("email", email)
+                .when()
+                .get(ApiConfig.getUserDetailByEmail());
+    }
 }
