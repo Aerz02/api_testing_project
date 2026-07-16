@@ -61,15 +61,19 @@ public class Helper {
                         "email", email,
                         "password", password
                 )).build();
-    }
+    }*/
 
-    public static RequestSpecification updateAccountRequest(String email, String password) {
+    public static RequestSpecification updateAccountRequest(String name, String email, String password,
+                                                            String firstName, String lastName) {
         return getBaseSpecBuilder(UPDATE_ACCOUNT_PATH)
                 .addFormParams(Map.of(
+                        "name", name,
                         "email", email,
-                        "password", password
+                        "password", password,
+                        "first_name", firstName,
+                        "last_name", lastName
                 )).build();
-    } */
+    }
 
     public static RequestSpecification getUserDetailByEmailRequest(String email) {
         return getBaseSpecBuilder(USER_DETAIL_BY_EMAIL_PATH)
@@ -122,4 +126,15 @@ public class Helper {
 
     }
 
+    public static Response putUpdateAccountRequest(String name, String email, String password,
+                                                   String firstName, String lastName) {
+        return RestAssured
+                .given()
+                .spec(updateAccountRequest(name, email, password, firstName, lastName))
+                .when()
+                .put()
+                .then()
+                .log().all()
+                .extract().response();
+    }
 }
