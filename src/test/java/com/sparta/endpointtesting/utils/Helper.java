@@ -55,14 +55,14 @@ public class Helper {
                 )).build();
     }
 // Don't know parameters for these will update later
-/*    public static RequestSpecification deleteAccountRequest(String email, String password) {
+    public static RequestSpecification deleteAccountRequest(String email, String password) {
         return getBaseSpecBuilder(DELETE_ACCOUNT_PATH)
                 .addFormParams(Map.of(
                         "email", email,
                         "password", password
                 )).build();
     }
-
+/*
     public static RequestSpecification updateAccountRequest(String email, String password) {
         return getBaseSpecBuilder(UPDATE_ACCOUNT_PATH)
                 .addFormParams(Map.of(
