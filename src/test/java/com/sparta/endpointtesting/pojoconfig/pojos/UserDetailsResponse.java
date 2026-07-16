@@ -1,4 +1,4 @@
-package com.sparta.api_testing_project.pojos;
+package com.sparta.endpointtesting.pojoconfig.pojos;
 
 public class UserDetailsResponse {
 

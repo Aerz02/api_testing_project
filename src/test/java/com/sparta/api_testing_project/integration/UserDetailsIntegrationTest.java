@@ -1,7 +1,7 @@
 package com.sparta.api_testing_project.integration;
 
 import com.sparta.api_testing_project.client.ApiClient;
-import com.sparta.api_testing_project.pojos.UserDetailsResponse;
+import com.sparta.endpointtesting.pojoconfig.pojos.UserDetailsResponse;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
